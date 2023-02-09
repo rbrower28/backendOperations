@@ -3,14 +3,18 @@ const ObjectId = require("mongodb").ObjectId;
 
 
 const getAll = async (req, res, next) => {
-  const result = await mongodb.getDb().db('tmp').collection('client').find();
-  result.toArray((err, lists) => {
-    if (err) {
-      res.status(400).json({ message: err });
-    }
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-  });
+  try {
+    const result = await mongodb.getDb().db('tmp').collection('client').find();
+    result.toArray((err, lists) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      }
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists);
+    });
+  } catch (err) {
+    res.status(400).json({ message: err });
+  }
 };
 
 const getSingle = async (req, res, next) => {
@@ -47,7 +51,10 @@ const updateClient = async (req, res) => {
 
   // gather previous data
   const result = await mongodb.getDb().db('tmp').collection('client').find({ _id: userId });
-  result.toArray().then((lists) => {
+  result.toArray((err, lists) => {
+    if (err) {
+      res.status(400).json({ message: err });
+    }
     updateData(lists[0]);
   });
 

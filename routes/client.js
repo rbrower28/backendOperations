@@ -2,10 +2,12 @@
 const router = require('express').Router();
 const clientController = require('../controllers/client');
 
+const validation = require('../middleware/validate');
+
 // match controller options
 router.get('/', clientController.getAll);
 router.get('/:id', clientController.getSingle);
-router.post('/', clientController.createClient);
+router.post('/', validation.validateNewClient, clientController.createClient);
 router.put('/:id', clientController.updateClient);
 router.delete('/:id', clientController.deleteClient);
 

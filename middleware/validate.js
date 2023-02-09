@@ -1,13 +1,15 @@
-const Validator = require('validatorjs');
+const validateNewClient = (req, res, next) => {
 
-// creates and handles each validation
-const validator = (body, rules, customMessages, callback) => {
-  const validation = new Validator(body, rules, customMessages);
-  validation.passes(() => callback(null, true));
-  validation.fails(() => callback(validation.errors, false));
-};
+  const Validator = require('validatorjs');
 
-const ValidateNewClient = (req, res, next) => {
+  // creates and handles each validation
+  const validator = (body, rules, customMessages, callback) => {
+    const validation = new Validator(body, rules, customMessages);
+    validation.passes(() => callback(null, true));
+    validation.fails(() => callback(validation.errors, false));
+  };
+
+  // set the validation rules
   const validationRule = {
     firstName: 'required|string',
     lastName: 'required|string',
@@ -27,5 +29,5 @@ const ValidateNewClient = (req, res, next) => {
 };
 
 module.exports = {
-  ValidateNewClient
+  validateNewClient
 };
