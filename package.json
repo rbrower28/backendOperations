@@ -4,11 +4,17 @@
   "description": "basic CRUD operations",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "swagger-autogen": "node ./swagger.js"
   },
   "author": "Ryan Brower",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.0.1",
+    "nodemon": "^2.0.20",
+    "swagger-autogen": "^2.23.0"
   }
 }
