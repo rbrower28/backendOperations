@@ -20,11 +20,13 @@ const getSingle = async (req, res, next) => {
 };
 
 const createClient = async (req, res) => {
+  // mark each post with the date and time created
+  let timestamp = Date().toLocaleString();
   const client = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
-    time_created: req.body.time_created
+    time_created: timestamp
   };
   const response = await mongodb.getDb().db('tmp').collection('client').insertOne(client);
   if (response.acknowledged) {
@@ -39,8 +41,7 @@ const updateClient = async (req, res) => {
   const client = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    email: req.body.email,
-    time_created: req.body.time_created
+    email: req.body.email
   };
   const response = await mongodb.getDb().db('tmp').collection('client').replaceOne({ _id: userId }, client);
   console.log(response);
