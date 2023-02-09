@@ -3,21 +3,18 @@
   {
     "firstName":"Tobey",
     "LastName":"Maguire",
-    "email":"toby@test.com",
-    "time_created":"09/02/2023 11:48:03 AM"
+    "email":"toby@test.com"
   },
   "client2":
   {
     "firstName":"Andrew",
     "LastName":"Garfield",
-    "email":"andrew@test.com",
-    "time_created":"09/02/2023 11:50:56 AM"
+    "email":"andrew@test.com"
   },
   "client3":
   {
     "firstName":"Tom",
     "LastName":"Holland",
-    "email":"tom@test.com",
-    "time_created":"09/02/2023 11:51:59 AM"
+    "email":"tom@test.com"
   }
 }
