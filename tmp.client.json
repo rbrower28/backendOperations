@@ -2,19 +2,19 @@
   "client1":
   {
     "firstName":"Tobey",
-    "LastName":"Maguire",
+    "lastName":"Maguire",
     "email":"toby@test.com"
   },
   "client2":
   {
     "firstName":"Andrew",
-    "LastName":"Garfield",
+    "lastName":"Garfield",
     "email":"andrew@test.com"
   },
   "client3":
   {
     "firstName":"Tom",
-    "LastName":"Holland",
+    "lastName":"Holland",
     "email":"tom@test.com"
   }
 }
