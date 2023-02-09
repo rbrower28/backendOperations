@@ -16,6 +16,10 @@ app
 // redirect to routes folder
 app.use("/", require("./routes"));
 
+process.on("uncaughtException", (err, origin) => {
+  console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+})
+
 // initialize db
 mongodb.initDb((err) => {
     if (err) {
