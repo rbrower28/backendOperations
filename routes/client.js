@@ -7,7 +7,7 @@ const validation = require('../middleware/validate');
 // match controller options
 router.get('/', clientController.getAll);
 router.get('/:id', clientController.getSingle);
-router.post('/', validation.validateNewClient, clientController.createClient);
+router.post('/', clientController.createClient);
 router.put('/:id', clientController.updateClient);
 router.delete('/:id', clientController.deleteClient);
 
