@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser")
 const mongodb = require("./db/connect");
+const cors = require("cors");
 
 // can switch between localhost or current deployed port
 const port = process.env.port || 8080
