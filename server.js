@@ -8,6 +8,7 @@ const port = process.env.port || 8080
 
 app
   .use(bodyParser.json())
+  .use(cors())
   .use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     next();
